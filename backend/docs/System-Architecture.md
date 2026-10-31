@@ -1908,8 +1908,7 @@ interrupted nonterminal Run's recovery due time to now; if the process is
 killed, the lease lapses and recovery applies the same settlement. Shutdown
 stops lease renewal and holds the lease until settlement commits; if settlement
 fails, it keeps the lease so recovery settles the Run once the lease lapses
-instead of resuming it. Suspended
-Runs are unaffected: the driver releases the lease with the dormant schedule.
+instead of resuming it. Suspended Runs are unaffected: the driver releases the lease with the dormant schedule.
 
 Live Runs schedule generic recovery only at their durable deadline or watchdog
 boundary. A `RecoverableAdapterError` from hosted prompt, continuation,

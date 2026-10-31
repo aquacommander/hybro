@@ -212,6 +212,8 @@ class RoomAgentSession:
         self._idle.set()
         self._lease_owner: str | None = None
         self._lease_task: asyncio.Task[None] | None = None
+        # Set once by shutdown() and never reset: a shut-down session is
+        # discarded by its host and must not start another Run.
         self._shutting_down = False
 
     async def _acquire_execution_lease(self) -> None:
